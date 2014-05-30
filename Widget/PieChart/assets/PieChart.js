@@ -1,9 +1,9 @@
 /* Place the code below into MySamplePlugin/Widget/HelloWorld/assets/MyWidget.js file */
-IpWidget_PieChart = function() {
+IpWidget_PieChart = function () {
 
     this.widgetObject = null;
 
-    this.init = function(widgetObject, data) {
+    this.init = function (widgetObject, data) {
         this.widgetObject = widgetObject;
         this.data = data;
         var context = this; // set this so $.proxy would work below
@@ -24,27 +24,31 @@ IpWidget_PieChart = function() {
     }
 
 
-    var fillTable = function (data){
+    var fillTable = function (data) {
         this.popup = $('.ipsGoogleChartsPopup');
 
         //this.popup.find("._dataTable").handsontable('destroy');
         this.popup.find("._dataTable").remove();
         this.popup.find('.modal-body').append('<div class="_dataTable"></div>');
 
-        if (typeof data.chartData == 'undefined'){
+        if (typeof data.chartData == 'undefined') {
             var chartFillData = [
                 ["Enter value 1", 1],
                 ["Enter value 2", 2]
             ];
 
-        }else{
+        } else {
             var rowsCount = data.chartData.length;
             var chartFillData = ['', 0];
 
-            for (var i=0; i<rowsCount ; i++){
+            for (var i = 0; i < rowsCount; i++) {
                 var itemObj = data.chartData[i];
-                var item = [itemObj.legend, Number(itemObj.value)];
-                chartFillData[i] = item;
+
+                if (itemObj.legend!=''){
+                    var item = [itemObj.legend, Number(itemObj.value)];
+                    chartFillData[i] = item;
+                }
+
             }
         }
 
@@ -52,9 +56,11 @@ IpWidget_PieChart = function() {
         this.popup.find("._dataTable").handsontable({
             data: chartFillData,
             colHeaders: ["Label", "Numeric value"],
+            minSpareRows: 1,
+            removeRowPlugin: true,
             startRows: rowsCount,
             startCols: 2,
-            columns:[
+            columns: [
                 {type: 'text'},
                 {type: 'numeric'}
             ]
@@ -86,11 +92,11 @@ IpWidget_PieChart = function() {
         e.preventDefault();
 
         var ht = this.popup.find('._dataTable').data().handsontable;
-        var rows = ht.countRows();
+        var rows = ht.countRows(); //Exclude spare row
 
         var chartData = [];
 
-        for (var i=0; i<rows; i++){
+        for (var i = 0; i < rows; i++) {
 
             var item = Object();
             item.legend = ht.getDataAtCell(i, 0);
@@ -115,3 +121,4 @@ IpWidget_PieChart = function() {
 
 
 };
+
