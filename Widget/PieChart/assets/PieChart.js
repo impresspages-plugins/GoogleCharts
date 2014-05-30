@@ -27,6 +27,10 @@ IpWidget_PieChart = function() {
     var fillTable = function (data){
         this.popup = $('.ipsGoogleChartsPopup');
 
+        //this.popup.find("._dataTable").handsontable('destroy');
+        this.popup.find("._dataTable").remove();
+        this.popup.find('.modal-body').append('<div class="_dataTable"></div>');
+
         if (typeof data.chartData == 'undefined'){
             var chartFillData = [
                 ["Enter value 1", 1],
@@ -56,6 +60,9 @@ IpWidget_PieChart = function() {
             ]
         });
 
+        this.popup.find("._dataTable").handsontable('render');
+
+
     }
 
 
@@ -66,8 +73,10 @@ IpWidget_PieChart = function() {
 
         this.popup.find('input[name=title]').val(context.data.title)
 
-        this.popup.modal(); // open modal popup
         $.proxy(fillTable, this)(context.data);
+
+        this.popup.modal(); // open modal popup
+
         this.popup.find('.ipsConfirm').off().on('click', $.proxy(save, this));
 
     };
