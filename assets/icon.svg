@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<path style="fill:#FF9900;" d="M100,94c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6c0-3.313,2.687-6,6-6h88c3.313,0,6,2.687,6,6
+	V94z"/>
+<g>
+	<path style="fill:#FFFFFF;" d="M88,23.917v47.5C88,73.136,88,78,88,78s-4.531,0-6.25,0h-62.5C17.531,78,13,78,13,78
+		s0-4.864,0-6.583v-47.5C13,22.198,13,18,13,18s4.531,0,6.25,0h62.5c1.719,0,6.25,0,6.25,0S88,22.198,88,23.917z M83,71.417v-47.5
+		C83,23.579,83,23,83,23s-0.912,0-1.25,0h-62.5C18.911,23,18,23,18,23s0,0.579,0,0.917v47.5C18,71.756,18,73,18,73s0.911,0,1.25,0
+		h62.5c0.338,0,1.25,0,1.25,0S83,71.756,83,71.417z M33,53v15H23V53H33z M48,33v35H38V33H48z M63,43v25H53V43H63z M78,28v40H68V28
+		H78z"/>
+</g>
+</svg>
