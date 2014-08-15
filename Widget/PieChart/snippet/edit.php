@@ -8,8 +8,8 @@
                 </div>
 
                 <div class="modal-body">
-                    <?php echo __('Enter chart data', 'GoogleCharts'); ?>
                     <?php echo $form->render(); ?>
+                    <b><?php echo __('Chart data', 'GoogleCharts'); ?></b>
                     <div class="_dataTable"></div>
                 </div>
                 <div class="modal-footer">

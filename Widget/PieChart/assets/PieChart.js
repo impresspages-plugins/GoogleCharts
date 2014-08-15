@@ -49,8 +49,9 @@ IpWidget_PieChart = function () {
 
         if (typeof data.chartData == 'undefined') {
             var chartFillData = [
-                ["Enter value 1", 1],
-                ["Enter value 2", 2]
+//                ["Dogs", 26000],
+//                ["Cats", 25000],
+//                ["Other", 100000]
             ];
 
         } else {
@@ -71,7 +72,7 @@ IpWidget_PieChart = function () {
 
         this.popup.find("._dataTable").handsontable({
             data: chartFillData,
-            colHeaders: ["Label", "Numeric value"],
+            colHeaders: ["Label", "Value"],
             minSpareRows: 1,
             removeRowPlugin: true,
             startRows: rowsCount,
