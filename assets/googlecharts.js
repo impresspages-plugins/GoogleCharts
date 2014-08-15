@@ -28,6 +28,8 @@ function drawChart() {
             var chartContainer = $chartWidget.find('.ipsGoogleChartsChart')
             var $chart = new google.visualization.PieChart(chartContainer[0]);
             $chart.draw(data, options);
+
+            $chartWidget.trigger('chartDrawn');
         }
     });
 
